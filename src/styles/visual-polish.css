@@ -1,0 +1,386 @@
+/*
+  GDG on Campus CITech — visual polish layer
+  Intent: light Google-inspired detail without changing content or adding heavy effects.
+*/
+
+:root {
+  --brand-blue-soft: rgba(66, 133, 244, .10);
+  --brand-red-soft: rgba(234, 67, 53, .075);
+  --brand-yellow-soft: rgba(251, 188, 4, .10);
+  --brand-green-soft: rgba(52, 168, 83, .085);
+}
+
+/* A tiny four-colour signature below the sticky navigation. */
+.site-header {
+  position: sticky;
+  isolation: isolate;
+}
+.site-header::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 50%;
+  bottom: -1px;
+  width: min(260px, 42vw);
+  transform: translateX(-50%);
+  background: linear-gradient(90deg,
+    var(--blue) 0 25%,
+    var(--red) 25% 50%,
+    var(--yellow) 50% 75%,
+    var(--green) 75% 100%);
+  opacity: .7;
+  pointer-events: none;
+}
+
+/* The hero already has its orbit artwork; these add a little depth around it. */
+.hero {
+  isolation: isolate;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: clamp(210px, 25vw, 330px);
+  aspect-ratio: 1;
+  left: -190px;
+  top: 56px;
+  border: 1px solid rgba(66, 133, 244, .10);
+  border-radius: 50%;
+  box-shadow: 0 0 0 18px rgba(66, 133, 244, .025), 0 0 0 42px rgba(52, 168, 83, .018);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 58px;
+  height: 58px;
+  right: 39%;
+  top: 42px;
+  opacity: .75;
+  background:
+    radial-gradient(circle, #4285f4 0 3px, transparent 3.5px) 0 0 / 19px 19px,
+    radial-gradient(circle, #34a853 0 2px, transparent 2.5px) 9px 9px / 19px 19px;
+  mask-image: linear-gradient(135deg, #000, transparent 80%);
+  pointer-events: none;
+}
+
+/* About: gentle colour wash and a fine orbit mark keep the middle from feeling empty. */
+.about-section {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse at 96% 10%, var(--brand-blue-soft), transparent 26%),
+    radial-gradient(ellipse at 4% 85%, rgba(52, 168, 83, .035), transparent 28%);
+}
+.about-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 190px;
+  height: 190px;
+  right: -93px;
+  top: 75px;
+  border: 1px solid rgba(66, 133, 244, .16);
+  border-radius: 50%;
+  box-shadow: 0 0 0 17px rgba(66, 133, 244, .025), 0 0 0 36px rgba(234, 67, 53, .018);
+  pointer-events: none;
+  animation: gdg-drift 13s ease-in-out infinite;
+}
+.about-section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 84px;
+  height: 84px;
+  left: 5%;
+  bottom: 34px;
+  border-radius: 24px;
+  border: 1px solid rgba(52, 168, 83, .13);
+  transform: rotate(24deg);
+  background: linear-gradient(135deg, rgba(52,168,83,.035), rgba(66,133,244,.025));
+  pointer-events: none;
+}
+.way-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.way-card::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 24px;
+  width: 46px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: var(--way-accent, var(--blue));
+  opacity: .72;
+}
+.way-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 95px;
+  height: 95px;
+  right: -47px;
+  top: -48px;
+  border: 1px solid color-mix(in srgb, var(--way-accent, var(--blue)) 23%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 13px color-mix(in srgb, var(--way-accent, var(--blue)) 4%, transparent);
+  transition: transform .35s ease;
+}
+.way-card:nth-child(1) { --way-accent: var(--blue); }
+.way-card:nth-child(2) { --way-accent: var(--green); }
+.way-card:nth-child(3) { --way-accent: var(--red); }
+.way-card:hover::after { transform: translate(-5px, 5px) scale(1.05); }
+
+/* A quiet dotted canvas in the domains band. */
+.domains-section {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse at 2% 2%, rgba(66, 133, 244, .09), transparent 31%),
+    radial-gradient(ellipse at 98% 95%, rgba(52, 168, 83, .055), transparent 30%),
+    radial-gradient(rgba(95, 99, 104, .095) .7px, transparent .8px);
+  background-size: auto, auto, 19px 19px;
+}
+.domain-card {
+  isolation: isolate;
+  box-shadow: 0 2px 4px rgba(60, 64, 67, .018);
+}
+.domain-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 51px;
+  right: -51px;
+  width: 126px;
+  height: 126px;
+  border: 1px solid color-mix(in srgb, var(--domain-color) 20%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 13px color-mix(in srgb, var(--domain-color) 3%, transparent), 0 0 0 28px color-mix(in srgb, var(--domain-color) 2%, transparent);
+  transition: transform .4s ease, opacity .3s ease;
+  pointer-events: none;
+}
+.domain-card:hover::after { transform: translate(-6px, 5px) scale(1.04); }
+.domain-card h3,
+.domain-card p,
+.domain-card .domain-card-top,
+.domain-card .text-action { position: relative; z-index: 1; }
+
+/* Leadership and future-profile cards get small brand details, not flashy effects. */
+.leadership-section {
+  position: relative;
+  isolation: isolate;
+  background-image: radial-gradient(ellipse at 96% 8%, rgba(234, 67, 53, .04), transparent 28%);
+}
+.leadership-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 245px;
+  height: 245px;
+  top: 30px;
+  right: -150px;
+  border: 1px solid rgba(234, 67, 53, .10);
+  border-radius: 50%;
+  box-shadow: 0 0 0 18px rgba(251, 188, 4, .022), 0 0 0 40px rgba(66, 133, 244, .018);
+  pointer-events: none;
+  animation: gdg-drift 15s ease-in-out infinite reverse;
+}
+.leader-card {
+  position: relative;
+  box-shadow: 0 3px 10px rgba(60, 64, 67, .025);
+}
+.leader-card::before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--role-color, var(--blue)), transparent 88%);
+  opacity: .9;
+}
+.domain-lead-photo-placeholder {
+  background-image:
+    radial-gradient(circle at 50% 42%, rgba(255,255,255,.98) 0, rgba(241,245,251,.85) 63%),
+    linear-gradient(rgba(66,133,244,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66,133,244,.06) 1px, transparent 1px);
+  background-size: auto, 19px 19px, 19px 19px;
+}
+.domain-lead-photo-placeholder svg,
+.domain-lead-photo-placeholder span { filter: drop-shadow(0 2px 4px rgba(60,64,67,.04)); }
+
+/* Advisors: a pale mint/blue aura breaks up the long white run of the page. */
+.advisors-section {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse at 100% 10%, rgba(52, 168, 83, .07), transparent 30%),
+    radial-gradient(ellipse at 0% 90%, rgba(142, 99, 206, .045), transparent 28%);
+}
+.advisors-section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 2.4%;
+  top: 115px;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  border: 1px solid rgba(52,168,83,.15);
+  transform: rotate(18deg);
+  box-shadow: inset 0 0 0 8px rgba(52,168,83,.025);
+  pointer-events: none;
+}
+.advisor-card {
+  box-shadow: 0 3px 10px rgba(60,64,67,.02);
+}
+
+/* Events: subtle colour light in the background and a clean accent edge on each card. */
+.events-section {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse at 94% 2%, rgba(66, 133, 244, .055), transparent 25%),
+    radial-gradient(ellipse at 3% 83%, rgba(251, 188, 4, .035), transparent 24%);
+}
+.events-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 145px;
+  height: 145px;
+  right: -76px;
+  top: 185px;
+  border: 1px solid rgba(66,133,244,.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 17px rgba(66,133,244,.02);
+  pointer-events: none;
+  animation: gdg-drift 14s ease-in-out infinite;
+}
+.event-tile-image::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--event-accent), rgba(255,255,255,.6));
+  pointer-events: none;
+}
+.event-tile {
+  box-shadow: 0 4px 16px rgba(60,64,67,.035);
+}
+
+/* Partners: dots are intentionally faint so the logos stay the focus. */
+.sponsors-section {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse at 2% 5%, rgba(52,168,83,.05), transparent 27%),
+    radial-gradient(rgba(66,133,244,.08) .7px, transparent .8px);
+  background-size: auto, 22px 22px;
+}
+.sponsor-card {
+  box-shadow: 0 4px 16px rgba(60,64,67,.035);
+}
+.sponsor-card:hover .sponsor-logo-frame img { transform: translateY(-1px) scale(1.025); }
+.sponsor-logo-frame img { transition: transform .25s ease; }
+
+/* Contact: thin concentric artwork adds polish while keeping the form readable. */
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  background-image: radial-gradient(ellipse at 98% 2%, rgba(66,133,244,.06), transparent 28%);
+}
+.contact-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 55px;
+  right: -125px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(66,133,244,.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 17px rgba(66,133,244,.02), 0 0 0 38px rgba(234,67,53,.015);
+  pointer-events: none;
+}
+.contact-section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 4%;
+  bottom: 65px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(251,188,4,.28);
+  border-radius: 12px;
+  transform: rotate(22deg);
+  pointer-events: none;
+}
+.contact-layout { position: relative; z-index: 1; }
+.contact-pitch-card { box-shadow: 0 8px 26px rgba(66,133,244,.045); }
+.contact-form { box-shadow: 0 12px 34px rgba(60,64,67,.055); }
+
+/* The join section keeps its blue field, with a discreet dotted accent. */
+.join-section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 180px;
+  height: 120px;
+  left: 39%;
+  bottom: -48px;
+  opacity: .15;
+  background: radial-gradient(circle, #fff 1.2px, transparent 1.7px) 0 0 / 15px 15px;
+  mask-image: linear-gradient(135deg, transparent, #000 40%, transparent 95%);
+  pointer-events: none;
+}
+
+/* One final visual signature tying the footer to the rest of the page. */
+.site-footer { position: relative; }
+.site-footer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -1px;
+  width: min(220px, 44vw);
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--blue) 0 25%, var(--red) 25% 50%, var(--yellow) 50% 75%, var(--green) 75% 100%);
+  opacity: .55;
+}
+
+@keyframes gdg-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
+}
+
+@media (max-width: 760px) {
+  .hero::before { left: -235px; top: 15px; width: 270px; }
+  .hero::after { right: 7%; top: 28px; opacity: .45; }
+  .about-section::before { right: -145px; top: 115px; width: 160px; height: 160px; }
+  .about-section::after { left: auto; right: 10px; bottom: 22px; width: 52px; height: 52px; }
+  .leadership-section::before { right: -185px; width: 220px; height: 220px; }
+  .advisors-section::after { top: 70px; right: -18px; width: 44px; height: 44px; }
+  .events-section::before { right: -105px; top: 250px; }
+  .contact-section::before { right: -195px; top: 85px; width: 220px; height: 220px; }
+  .contact-section::after { left: auto; right: 22px; bottom: 20px; }
+  .join-section::after { left: 14%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-section::before,
+  .leadership-section::before,
+  .events-section::before { animation: none; }
+  .way-card::after,
+  .domain-card::after,
+  .sponsor-logo-frame img { transition: none; }
+}

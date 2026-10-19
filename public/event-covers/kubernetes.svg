@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf3ff"/><stop offset="1" stop-color="#f8faff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#d7e5ff" stop-opacity=".9"/><stop offset="1" stop-color="#f8faff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="980" cy="350" r="285" fill="url(#glow)"/>
+  <g transform="translate(205 0)" stroke="#b7c9e8" stroke-width="2" fill="none">
+    <path d="M760 165L900 245L900 405L760 485L620 405L620 245Z"/>
+    <path d="M760 220L850 270L850 380L760 430L670 380L670 270Z"/>
+    <path d="M760 165V220M900 245L850 270M900 405L850 380M760 485V430M620 405L670 380M620 245L670 270"/>
+  </g>
+  <g transform="translate(965 325)">
+    <path d="M0 -125L108 -62V62L0 125L-108 62V-62Z" fill="#326ce5"/>
+    <g stroke="#fff" stroke-width="7" stroke-linecap="round"><path d="M0 -68V-19M47 -40L18 -4M47 40L18 4M0 68V19M-47 40L-18 4M-47 -40L-18 -4"/></g>
+    <circle r="29" fill="#fff"/><circle r="12" fill="#326ce5"/>
+  </g>
+  <text x="72" y="200" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" letter-spacing="5.5" fill="#326ce5">CLOUD-NATIVE DEVELOPMENT</text>
+  <text x="70" y="305" font-family="Arial,Helvetica,sans-serif" font-size="61" font-weight="700" letter-spacing="-2" fill="#202124">Kubernetes</text>
+  <text x="70" y="373" font-family="Arial,Helvetica,sans-serif" font-size="61" font-weight="700" letter-spacing="-2" fill="#202124">Workshop</text>
+  <text x="76" y="428" font-family="Arial,Helvetica,sans-serif" font-size="27" fill="#5f6368">with KubeAce</text>
+  <text x="78" y="610" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="#6b7280">Containers · DevOps · AI deployment</text>
+  <path d="M72 552H430" stroke="#c8d8f5" stroke-width="2" stroke-linecap="round"/>
+</svg>

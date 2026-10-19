@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8f0fe"/><stop offset="1" stop-color="#f7fbff"/></linearGradient></defs>
+<rect width="1200" height="700" fill="url(#bg)"/>
+<g fill="none" stroke="#a8c7fa" stroke-width="3" opacity=".8"><circle cx="970" cy="350" r="205"/><circle cx="970" cy="350" r="150"/><path d="M765 350H1175M970 145V555"/></g>
+<g transform="translate(975 300) scale(.86)"><path d="M-130 45C-160 45 -175 25 -175 0C-175 -30 -150 -52 -121 -52C-107 -105 -56 -136 -7 -119C27 -108 49 -81 55 -49C102 -48 135 -15 135 25C135 65 101 91 60 91H-130C-171 91 -197 67 -197 37C-197 8 -174 -15 -144 -15" fill="#fff" stroke="#4285f4" stroke-width="8" stroke-linecap="round"/><path d="M-5 -35V42M-35 8H25" stroke="#34a853" stroke-width="12" stroke-linecap="round"/></g>
+<text x="75" y="205" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" letter-spacing="6" fill="#1967d2">LEARN · BUILD · DEPLOY</text>
+<text x="72" y="314" font-family="Arial,Helvetica,sans-serif" font-size="69" font-weight="700" letter-spacing="-2.5" fill="#202124">Cloud Study Jam</text>
+<text x="78" y="378" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#5f6368">Explore Google Cloud through hands-on labs</text>
+<text x="78" y="610" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#6b7280">Google Cloud · BigQuery · Serverless</text></svg>
