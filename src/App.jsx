@@ -173,7 +173,7 @@ function Header({ isDomainPage = false }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const links = [
     ['About', '#about'],
-    ['Domains', '#domains'],
+    ['Teams', '#teams'],
     ['Leadership', '#leadership'],
     ['Advisors', '#advisors'],
     ['Events', '#events'],
@@ -216,7 +216,7 @@ function Hero() {
           A campus community for people who love technology, enjoy figuring things out, and want to build something meaningful together.
         </motion.p>
         <motion.div className="hero-actions" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.25 }}>
-          <a className="button button--primary" href="#domains">Explore our domains <Icon name="arrow" size={18} /></a>
+          <a className="button button--primary" href="#teams">Explore our teams <Icon name="arrow" size={18} /></a>
           <a className="button button--secondary" href="#about">Get to know us</a>
         </motion.div>
         <motion.div className="hero-note" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.45 }}>
@@ -256,7 +256,7 @@ function Hero() {
           </div>
 
           <div className="community-canvas-bottom">
-            <span>FIVE DOMAINS</span>
+            <span>FIVE TEAMS</span>
             <div className="canvas-domain-marks" aria-hidden="true"><i /><i /><i /><i /><i /></div>
             <span className="canvas-bottom-caption">ONE CAMPUS COMMUNITY</span>
           </div>
@@ -319,19 +319,19 @@ function About() {
 
 function Domains() {
   return (
-    <section id="domains" className="section section-wrap domains-section">
-      <SectionIntro eyebrow="Find your corner" title={<>Five domains.<br /><span className="text-muted">One curious community.</span></>} description="Whether you love building systems, designing experiences or bringing people together, there is a place to start and room to grow." />
+    <section id="teams" className="section section-wrap domains-section">
+      <SectionIntro eyebrow="Find your corner" title={<>Five teams.<br /><span className="text-muted">One curious community.</span></>} description="Whether you love building systems, designing experiences or bringing people together, there is a place to start and room to grow." />
       <div className="domains-grid">
         {domains.map((domain, index) => (
-          <motion.a href={`/domains/${domain.id}`} className={`domain-card domain-card--${domain.color} domain-card-link`} key={domain.id} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.48, delay: (index % 3) * 0.06 }}>
-            <div className="domain-card-top"><span className="domain-number">{domain.number} / DOMAIN</span><span className="domain-icon"><Icon name={domain.icon} size={24} /></span></div>
+          <motion.a href={`/teams/${domain.id}`} className={`domain-card domain-card--${domain.color} domain-card-link`} key={domain.id} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.48, delay: (index % 3) * 0.06 }}>
+            <div className="domain-card-top"><span className="domain-number">{domain.number} / TEAM</span><span className="domain-icon"><Icon name={domain.icon} size={24} /></span></div>
             <h3>{domain.title}</h3>
             <p className="domain-short">{domain.short}</p>
             <span className="text-action">Meet the team <span><Icon name="arrow" size={17} /></span></span>
           </motion.a>
         ))}
       </div>
-      <div className="domains-footnote"><span className="footnote-dot" />Every domain welcomes learners who are ready to contribute, experiment and grow.</div>
+      <div className="domains-footnote"><span className="footnote-dot" />Every team welcomes learners who are ready to contribute, experiment and grow.</div>
     </section>
   );
 }
@@ -344,7 +344,7 @@ const teamSocials = [
 
 function DomainTeamPage({ domain, onBack }) {
   const team = [
-    { role: 'Domain Lead', number: '01' },
+    { role: 'Team Lead', number: '01' },
     { role: 'Team Member', number: '02' },
     { role: 'Team Member', number: '03' },
     { role: 'Team Member', number: '04' },
@@ -353,9 +353,9 @@ function DomainTeamPage({ domain, onBack }) {
   return (
     <main className="domain-page" id="main-content">
       <section className="domain-page-hero section-wrap">
-        <button className="back-link" onClick={onBack}><Icon name="arrow" size={17} /> Back to all domains</button>
+        <button className="back-link" onClick={onBack}><Icon name="arrow" size={17} /> Back to all teams</button>
         <div className={`domain-page-icon domain-page-icon--${domain.color}`}><Icon name={domain.icon} size={30} /></div>
-        <span className="eyebrow"><span className="eyebrow-dot" />DOMAIN {domain.number}</span>
+        <span className="eyebrow"><span className="eyebrow-dot" />TEAM {domain.number}</span>
         <h1>{domain.title}</h1>
         <p className="domain-page-short">{domain.short}</p>
         <p className="domain-page-description">{domain.description}</p>
@@ -363,7 +363,7 @@ function DomainTeamPage({ domain, onBack }) {
       </section>
       <section className="domain-team-section">
         <div className="section-wrap">
-          <SectionIntro eyebrow="Meet the people" title={<>The team behind<br /><span className="text-muted">the domain.</span></>} description="Four people, one shared curiosity. Team profiles and social links will be added here soon." />
+          <SectionIntro eyebrow="Meet the people" title={<>The team behind<br /><span className="text-muted">the work.</span></>} description="Four people, one shared curiosity. Team profiles and social links will be added here soon." />
           <div className="domain-team-grid">
             {team.map((member, index) => (
               <motion.article className={`domain-member-card domain-member-card--${domain.color}`} key={member.number} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .35, delay: index * .07 }}>
@@ -432,7 +432,7 @@ function Leadership() {
         <span className="google-dot google-dot--yellow" />
         <span className="google-dot google-dot--green" />
       </div>
-      <div className="domain-leads-grid" aria-label="Domain lead profile placeholders">
+      <div className="domain-leads-grid" aria-label="Team lead profile placeholders">
         {domainLeadSlots.map((slot, index) => (
           <motion.article className={`domain-lead-slot domain-lead-slot--${slot.color}`} key={slot.domainId} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.35, delay: index * 0.045 }}>
             <div className="domain-lead-photo">
@@ -440,7 +440,7 @@ function Leadership() {
               <span className="leader-index">{slot.number}</span>
             </div>
             <div className="domain-lead-info">
-              <span className="domain-lead-role"><span />DOMAIN LEAD</span>
+              <span className="domain-lead-role"><span />TEAM LEAD</span>
               <h3>{slot.domainTitle}</h3>
               <p>Name to be added</p>
             </div>
@@ -1080,12 +1080,12 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const domainMatch = currentPath.match(/^\/domains\/([^/]+)\/?$/);
+  const domainMatch = currentPath.match(/^\/(?:teams|domains)\/([^/]+)\/?$/);
   const activeDomain = domainMatch ? domains.find((domain) => domain.id === domainMatch[1]) : null;
 
   // Intercept internal domain links so navigation works without a routing dependency.
   const handleDomainNavigation = (event) => {
-    const link = event.target.closest('a[href^="/domains/"]');
+    const link = event.target.closest('a[href^="/teams/"], a[href^="/domains/"]');
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     navigate(link.getAttribute('href'));
