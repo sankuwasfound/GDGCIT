@@ -1037,7 +1037,7 @@ function Footer() {
     { label: 'Instagram', href: 'https://www.instagram.com/gdg.cit/', icon: 'instagram' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/gdgcit', icon: 'linkedin' },
     { label: 'WhatsApp', href: 'https://whatsapp.com/channel/0029Vb6ObkrEawduwzGJ5Z2D', icon: 'message' },
-    { label: 'GitHub', href: 'https://github.com/sachin78995/gdg-citech', icon: 'github' },
+    { label: 'GitHub', href: 'https://github.com/GDGSC-CITECH', icon: 'github' },
   ];
   return (
     <footer className="site-footer">
