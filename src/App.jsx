@@ -5,7 +5,7 @@ import './App.css';
 import './styles/visual-polish.css';
 import './styles/next-pass.css';
 
-const COMMUNITY_URL = 'https://gdg.community.dev/';
+const COMMUNITY_URL = 'https://gdg.community.dev/gdg-on-campus-cambridge-institute-of-technology-bengaluru-india/';
 
 const domains = [
   {
