@@ -635,7 +635,14 @@ const eventItems = [
     participation: 'Open to all',
     tagline: 'From local builds to cloud-native deployment.',
     color: 'blue',
-    cover: '/event-covers/kubernetes.svg',
+    cover: '/events/kubernetes/workshop-classroom.svg',
+    images: [
+      '/events/kubernetes/workshop-classroom.svg',
+      '/events/kubernetes/speaker-session.svg',
+      '/events/kubernetes/certificate-presentation.svg',
+      '/events/kubernetes/team-photo.svg',
+      '/events/kubernetes/participant-experience.svg',
+    ],
     description: 'A workshop on Kubernetes, DevOps and cloud deployment, including deploying an AI-based application.',
     fullDescription: 'This hands-on workshop introduces cloud-native technology and modern software deployment. It explores how container orchestration helps move applications from local development to more resilient, scalable environments.\n\nLed by Harish Rajendran, the session covers a deployment workflow and an introduction to containerizing an AI-based application. Bringing a laptop was recommended for a better experience.',
     featuredPerson: {
